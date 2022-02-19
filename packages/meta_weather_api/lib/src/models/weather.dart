@@ -75,9 +75,11 @@ class Weather {
 
   final int id;
   final String weatherStateName;
-  @JsonKey(unknownEnumValue: WeatherState.unknown)
+  @JsonKey(unknownEnumValue: WeatherState.unknown, name: 'weather_state_abbr')
   final WeatherState weatherStateAbbr;
-  @JsonKey(unknownEnumValue: WindDirectionCompass.unknown)
+  @JsonKey(
+      unknownEnumValue: WindDirectionCompass.unknown,
+      name: 'wind_direction_compass')
   final WindDirectionCompass windDirectionCompass;
   final DateTime created;
   final DateTime applicableDate;

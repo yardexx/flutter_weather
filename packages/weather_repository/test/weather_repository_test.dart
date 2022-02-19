@@ -45,7 +45,7 @@ void main() {
         when(() => metaWeatherApiClient.locationSearch(any()))
             .thenThrow(exception);
         expect(
-              () async => await weatherRepository.getWeather(city),
+          () async => await weatherRepository.getWeather(city),
           throwsA(exception),
         );
       });
@@ -54,7 +54,7 @@ void main() {
         final location = MockLocation();
         when(() => location.woeid).thenReturn(woeid);
         when(() => metaWeatherApiClient.locationSearch(any())).thenAnswer(
-              (_) async => location,
+          (_) async => location,
         );
         try {
           await weatherRepository.getWeather(city);
@@ -67,11 +67,11 @@ void main() {
         final location = MockLocation();
         when(() => location.woeid).thenReturn(woeid);
         when(() => metaWeatherApiClient.locationSearch(any())).thenAnswer(
-              (_) async => location,
+          (_) async => location,
         );
         when(() => metaWeatherApiClient.getWeather(any())).thenThrow(exception);
         expect(
-              () async => await weatherRepository.getWeather(city),
+          () async => await weatherRepository.getWeather(city),
           throwsA(exception),
         );
       });
@@ -86,10 +86,10 @@ void main() {
         );
         when(() => weather.theTemp).thenReturn(42.42);
         when(() => metaWeatherApiClient.locationSearch(any())).thenAnswer(
-              (_) async => location,
+          (_) async => location,
         );
         when(() => metaWeatherApiClient.getWeather(any())).thenAnswer(
-              (_) async => weather,
+          (_) async => weather,
         );
         final actual = await weatherRepository.getWeather(city);
         expect(
@@ -112,10 +112,10 @@ void main() {
         );
         when(() => weather.theTemp).thenReturn(42.42);
         when(() => metaWeatherApiClient.locationSearch(any())).thenAnswer(
-              (_) async => location,
+          (_) async => location,
         );
         when(() => metaWeatherApiClient.getWeather(any())).thenAnswer(
-              (_) async => weather,
+          (_) async => weather,
         );
         final actual = await weatherRepository.getWeather(city);
         expect(
@@ -138,10 +138,10 @@ void main() {
         );
         when(() => weather.theTemp).thenReturn(42.42);
         when(() => metaWeatherApiClient.locationSearch(any())).thenAnswer(
-              (_) async => location,
+          (_) async => location,
         );
         when(() => metaWeatherApiClient.getWeather(any())).thenAnswer(
-              (_) async => weather,
+          (_) async => weather,
         );
         final actual = await weatherRepository.getWeather(city);
         expect(

@@ -15,7 +15,7 @@ void main() async {
         : await getTemporaryDirectory(),
   );
   HydratedBlocOverrides.runZoned(
-        () => runApp(WeatherApp(weatherRepository: WeatherRepository())),
+    () => runApp(WeatherApp(weatherRepository: WeatherRepository())),
     blocObserver: WeatherBlocObserver(),
     storage: storage,
   );

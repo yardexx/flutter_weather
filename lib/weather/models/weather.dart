@@ -51,7 +51,7 @@ class Weather extends Equatable {
 
   factory Weather.fromRepository(weather_repository.Weather weather) {
     return Weather(
-      condition: WeatherCondition.unknown,
+      condition: weather.condition,
       lastUpdated: DateTime.now(),
       location: weather.location,
       temperature: Temperature(value: weather.temperature),
